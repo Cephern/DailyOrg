@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Solway&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+}
+
+.app {
+    margin: 2em;
+}
+
+.app_header {
+    text-align: center;
+    font-family: 'Solway', serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Navbar component */
+
+.navbar ul  {
+    margin: 0 1.5em;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar li {
+    padding: 0.2em 0.5em;
+}
+
+.navbar a {
+    color: #00bfff;
+} 
+
+.navbar a.active {
+    color: #ff4000;
+}
+
+/* Org component */
+
+.org {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Budget component */
+
+.budget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #00bfff;
+    border-radius: 10px;
+}
+
+.budget_form {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#budget {
+    width: 40%;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border: 1px solid #00bfff;
+    transition: border 0.3s ease-in;
+}
+
+#budget:focus {
+    outline: none;
+    border: 1px solid #ff4000;
+}
+
+.budget_h2 {
+    padding: 8px;
+}
+
+/* AddItem component */
+
+.addItem_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #00bfff;
+    border-radius: 10px;
+    padding: 0.5em;
+
+}
+
+.addItem_form h2 {
+    width: 50%;
+    text-align: center;
+    padding: 1.5em;
+}

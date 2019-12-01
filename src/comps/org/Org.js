@@ -4,7 +4,7 @@ import Budget from './Budget';
 import TotalCount from './TotalCount';
 import AddItem from './AddItem';
 
-class Org extends Component {
+export default class Org extends Component {
     state = {
         items: [
             { id: 1, name: 'mjolk', cost: 1, count: 2 },
@@ -65,7 +65,7 @@ class Org extends Component {
 
     render() {
         return (
-            <div style={appStyle}>
+            <div className="org">
                 <Budget budget={this.state.budget} addBudget={this.addBudget} />
                 <AddItem addItem={this.addItem} />
                 <TotalCount items={this.state.items} />
@@ -74,9 +74,3 @@ class Org extends Component {
         );
     }
 }
-
-let appStyle = {
-    padding: '2em'
-}
-
-export default Org;

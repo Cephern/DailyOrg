@@ -5,14 +5,15 @@ import Navbar from './comps/Navbar'
 import Org from './comps/org/Org';
 import Color from './comps/colors/Color';
 
+import "./index.css";
 
-class App extends Component {
+export default class App extends Component {
 
   render() {
     return (
       <BrowserRouter>
-        <div className="App" style={appStyle}>
-          <header style={headerStyle}>Let'See</header>
+        <div className="app">
+          <header className="app_header">Let'See</header>
           <Navbar />
           <Route exact path='/' component={Org} />
           <Route path='/colorPicker' component={Color} />
@@ -21,15 +22,3 @@ class App extends Component {
     )
   }
 }
-
-let headerStyle = {
-  fontSize: '1.5em',
-  fontWeight: '600',
-  textAlign: 'center'
-}
-
-let appStyle = {
-  width: '450px'
-}
-
-export default App;

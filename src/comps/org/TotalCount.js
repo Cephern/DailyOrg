@@ -13,22 +13,11 @@ const TotalCount = ({ items }) => {
     let cost = items.map(item => item.cost * item.count).reduce((acc, curr) => acc + curr);
 
     return (
-        <div style={totalStyle} className="total">
-            <p>Items Count: {count}</p>
-            <p>Total Cost: {cost}</p>
+        <div className="total">
+            <p className="total_count">Items Count: {count}</p>
+            <p className="total_cost">Total Cost: {cost}</p>
         </div>
     )
-}
-
-let totalStyle = {
-    margin: '0.5em 0',
-    background: '#eee',
-    borderRadius: '15px',
-    boxShadow: '5px 5px 8px #000',
-    padding: '0.5em',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center'
 }
 
 export default TotalCount;
