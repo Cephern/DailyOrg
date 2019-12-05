@@ -6,12 +6,8 @@ import AddItem from './AddItem';
 
 export default class Org extends Component {
     state = {
-        items: [
-            { id: 1, name: 'mjolk', cost: 1, count: 2 },
-            { id: 2, name: 'apple', cost: 3, count: 2 },
-            { id: 3, name: 'knott', cost: 1, count: 3 }
-        ],
-        budget: null
+        items: JSON.parse(localStorage.getItem('items')) || [],
+        budget: JSON.parse(localStorage.getItem('budget')) || null
     }
 
     addItem = (item) => {
@@ -19,17 +15,20 @@ export default class Org extends Component {
         item.id = id;
         let items = [...this.state.items, item];
         this.setState({ items });
+        localStorage.setItem('items', JSON.stringify(items));
     }
 
     deleteItem = (id) => {
         let filteredItems = [...this.state.items].filter(item => item.id !== id);
         this.setState({ items: filteredItems });
+        localStorage.setItem('items', JSON.stringify(filteredItems));
     }
 
     addBudget = (budget) => {
         this.setState({
             budget: budget
-        })
+        });
+        localStorage.setItem('budget', JSON.stringify(budget));
     }
 
     increment = (id) => {

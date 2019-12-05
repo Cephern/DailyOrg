@@ -16,11 +16,7 @@ a {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff;
-}
-
-.app {
-    margin: 2em;
+    background-color: #3a3535;
 }
 
 .app_header {
@@ -28,8 +24,9 @@ body {
     font-family: 'Solway', serif;
     font-size: 1.5em;
     font-weight: 600;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #ddd;
+    padding: 0.5em;
+    border-bottom: 1px solid #666;
+    background-color: #ff7315;
 }
 
 /* Navbar component */
@@ -42,7 +39,7 @@ body {
 }
 
 .navbar li {
-    padding: 0.2em 0.5em;
+    padding: 0.5em 0.5em;
 }
 
 .navbar a {
@@ -67,13 +64,13 @@ body {
 
 .budget {
     display: flex;
+    width: 100%;
+    background-color: #f4f4f4;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 1em;
+    margin-bottom: 1em;
     padding: 1em;
-    border: 1px solid #00bfff;
-    border-radius: 10px;
 }
 
 .budget_form {
@@ -85,7 +82,6 @@ body {
 
 #budget {
     width: 40%;
-    background-color: #f4f4f4;
     border-radius: 10px;
     border: 1px solid #00bfff;
     transition: border 0.3s ease-in;
@@ -103,17 +99,94 @@ body {
 /* AddItem component */
 
 .addItem_form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #00bfff;
-    border-radius: 10px;
-    padding: 0.5em;
-
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: #f4f4f4;
 }
 
 .addItem_form h2 {
     width: 50%;
     text-align: center;
-    padding: 1.5em;
+    color: #00bfff;
+    padding: 0.5em;
+    background-color: #3a3535;
+    border-radius: 15px;
+    margin-bottom: 1em;
+}
+
+.addItem_inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px 0;
+    margin: 1em;
+}
+
+.addItem_inputs input {
+    border-radius: 15px;
+    border: 1px solid #00bfff;
+}
+
+.addItem_form button {
+    width: 20%;
+    background-color: #00bfff;
+    padding: 0.5em;
+    border: 1px solid #00bfff;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+
+/* TotalCount component */
+
+.total {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Display component*/
+
+.display-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.display_item {
+    background-color: #f4f4f4;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: 10px;
+}
+
+.item_name {
+    width: 30%;
+    text-align: center;
+}
+
+.item_btns { 
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+.item_btns button {
+    padding: 0.5em;
+    border-radius: 15px;
+    border: 1px solid #00bfff;
+    background-color: #fff;
 }

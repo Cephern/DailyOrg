@@ -3,7 +3,7 @@ import React from 'react';
 const TotalCount = ({ items }) => {
     if (items.length === 0) {
         return (
-            <div className="empty">
+            <div className="total">
                 <p>Items Count: 0</p>
                 <p>Total Cost: 0</p>
             </div>
