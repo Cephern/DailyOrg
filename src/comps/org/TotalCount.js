@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TotalCount = ({ items }) => {
+const TotalCount = ({ items, budget }) => {
     if (items.length === 0) {
         return (
             <div className="total">
@@ -12,8 +12,22 @@ const TotalCount = ({ items }) => {
     let count = items.map(item => Number(item.count)).reduce((acc, curr) => acc + curr);
     let cost = items.map(item => item.cost * item.count).reduce((acc, curr) => acc + curr);
 
+    let totalStyle = {
+        backgroundColor: '#f4f4f4'
+    }
+
+    if (budget) {
+        if (budget < cost) {
+            totalStyle.backgroundColor = 'red';
+        } else if (cost > budget * 0.9) {
+            totalStyle.backgroundColor = 'yellow';
+        } else {
+            totalStyle.backgroundColor = 'green';
+        }
+    }
+
     return (
-        <div className="total">
+        <div className="total" style={totalStyle}>
             <p className="total_count">Items Count: {count}</p>
             <p className="total_cost">Total Cost: {cost}</p>
         </div>

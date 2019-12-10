@@ -4,7 +4,7 @@ export default class AddItem extends Component {
     state = {
         name: null,
         cost: null,
-        count: null,
+        count: 1,
     }
 
     handleSubmit = (e) => {
@@ -12,12 +12,10 @@ export default class AddItem extends Component {
         this.props.addItem(this.state);
         this.setState({
             name: null,
-            cost: null,
-            count: null
+            cost: null
         })
         document.querySelector('#name').value = null;
         document.querySelector('#cost').value = null;
-        document.querySelector('#count').value = null;
     }
 
     handleChange = (e) => {
@@ -35,8 +33,6 @@ export default class AddItem extends Component {
                     <input onChange={this.handleChange} type="text" name="name" id="name" />
                     <label htmlFor="cost">Cost:</label>
                     <input onChange={this.handleChange} type="number" name="cost" id="cost" />
-                    <label htmlFor="count">Count:</label>
-                    <input onChange={this.handleChange} type="number" name="count" id="count" />
                 </div>
                 <button>Submit</button>
             </form>

@@ -3,7 +3,7 @@ import React from 'react';
 const Display = ({ items, deleteItem, increment, decrement }) => {
     if (items.length === 0) {
         return (
-            <div className="">
+            <div className="display_empty">
                 <p>Your Shopping List is Empty, wow</p>
             </div>
 

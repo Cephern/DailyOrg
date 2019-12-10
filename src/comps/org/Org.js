@@ -37,7 +37,6 @@ export default class Org extends Component {
                 if (item.id === id) {
                     item.count++;
                 }
-
                 return item;
             })]
         });
@@ -67,8 +66,10 @@ export default class Org extends Component {
             <div className="org">
                 <Budget budget={this.state.budget} addBudget={this.addBudget} />
                 <AddItem addItem={this.addItem} />
-                <TotalCount items={this.state.items} />
-                <Display items={this.state.items} deleteItem={this.deleteItem} increment={this.increment} decrement={this.decrement} />
+                <div className="output-wrap">
+                    <TotalCount items={this.state.items} budget={this.state.budget} />
+                    <Display items={this.state.items} deleteItem={this.deleteItem} increment={this.increment} decrement={this.decrement} />
+                </div>
             </div>
         );
     }

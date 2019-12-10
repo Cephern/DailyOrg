@@ -140,10 +140,20 @@ body {
     font-weight: 600;
 }
 
+/* output */
+
+.output-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* TotalCount component */
 
 .total {
+    position: sticky;
+    top: 0;
     width: 100%;
     margin-bottom: 1em;
     padding: 1em;
@@ -153,6 +163,14 @@ body {
 }
 
 /* Display component*/
+
+.display_empty {
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    margin: 0.5em;
+    background-color: #f4f4f4;
+}
 
 .display-items {
     display: flex;
