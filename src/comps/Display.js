@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { OrgContext } from '../contexts/OrgContext';
 
-const Display = ({ items, deleteItem, increment, decrement }) => {
+const Display = () => {
+    const { items, deleteItem } = useContext(OrgContext);
+
     if (items.length === 0) {
         return (
             <div className="display_empty">
@@ -16,8 +19,8 @@ const Display = ({ items, deleteItem, increment, decrement }) => {
                     <p className="item_cost">{item.cost}р</p>
                     <p className="item_count">{item.count}</p>
                     <div className="item_btns">
-                        <button className="btn_inc" onClick={() => increment(item.id)} >+</button>
-                        <button className="btn_dec" onClick={() => decrement(item.id)} >-</button>
+                        <button className="btn_inc">+</button>
+                        <button className="btn_dec">-</button>
                         <button className="btn_delete" onClick={() => deleteItem(item.id)} >Delete</button>
                     </div>
                 </div>

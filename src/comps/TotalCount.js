@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { OrgContext } from '../contexts/OrgContext';
 
-const TotalCount = ({ items, budget }) => {
+const TotalCount = () => {
+    const { items, budget } = useContext(OrgContext);
+
     if (items.length === 0) {
         return (
             <div className="total">
