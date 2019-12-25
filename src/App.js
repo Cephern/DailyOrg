@@ -5,6 +5,7 @@ import OrgContextProvider from './contexts/OrgContext';
 import Budget from './comps/Budget';
 import Display from './comps/Display';
 import TotalCount from './comps/TotalCount';
+import AddItem from './comps/AddItem';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <OrgContextProvider>
         <Budget />
         <TotalCount />
+        <AddItem />
         <Display />
       </OrgContextProvider>
     </div>

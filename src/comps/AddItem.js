@@ -1,41 +1,35 @@
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
+import { OrgContext } from '../contexts/OrgContext';
 
-export default class AddItem extends Component {
-    state = {
-        name: null,
-        cost: null,
-        count: 1,
-    }
+const AddItem = () => {
+    const { addItem } = useContext(OrgContext);
+    const [name, setName] = useState('');
+    const [cost, setCost] = useState('');
 
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addItem(this.state);
-        this.setState({
-            name: null,
-            cost: null
-        })
-        document.querySelector('#name').value = null;
-        document.querySelector('#cost').value = null;
+        addItem({ name, cost, count: 1 });
+        setName('');
+        setCost('');
     }
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.id]: e.target.value
-        });
-    }
-
-    render() {
-        return (
-            <form className="addItem_form" onSubmit={this.handleSubmit}>
-                <h2>Add Item</h2>
-                <div className="addItem_inputs">
-                    <label htmlFor="name">Name:</label>
-                    <input onChange={this.handleChange} type="text" name="name" id="name" />
-                    <label htmlFor="cost">Cost:</label>
-                    <input onChange={this.handleChange} type="number" name="cost" id="cost" />
-                </div>
-                <button>Submit</button>
-            </form>
-        );
-    }
+    return (
+        <form className="addItem_form" onSubmit={handleSubmit}>
+            <h2>Add Item</h2>
+            <div className="addItem_inputs">
+                <label htmlFor="name">Name:</label>
+                <input type="text" name="name" id="name" value={name} onChange={(e) => {
+                    setName(e.target.value);
+                }} />
+                <label htmlFor="cost">Cost:</label>
+                <input type="number" name="cost" id="cost" value={cost} onChange={(e) => {
+                    setCost(Number(e.target.value));
+                }} />
+            </div>
+            <input type="submit" value="submit" />
+        </form>
+    );
 }
+
+
+export default AddItem;

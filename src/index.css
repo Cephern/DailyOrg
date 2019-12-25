@@ -130,7 +130,7 @@ body {
     border: 1px solid #00bfff;
 }
 
-.addItem_form button {
+.addItem_form input[type='submit'] {
     width: 20%;
     background-color: #00bfff;
     padding: 0.5em;
@@ -165,7 +165,7 @@ body {
 /* Display component*/
 
 .display_empty {
-    width: 100%;
+    max-width: 100%;
     text-align: center;
     padding: 1em;
     margin: 0.5em;
@@ -178,6 +178,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 90%;
+    margin: 0 auto;
 }
 
 .display_item {

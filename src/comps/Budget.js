@@ -6,7 +6,7 @@ const Budget = () => {
     const [budgetInner, setBudget] = useState('');
 
     const handleChange = (e) => {
-        setBudget(Number(e.target.value));
+        setBudget(e.target.value);
     }
 
     const handleSubmit = (e) => {
