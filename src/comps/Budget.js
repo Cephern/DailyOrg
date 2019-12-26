@@ -1,8 +1,6 @@
-import React, { useState, useContext } from 'react';
-import { OrgContext } from '../contexts/OrgContext';
+import React, { useState } from 'react';
 
-const Budget = () => {
-    const { budget, addBudget } = useContext(OrgContext);
+const Budget = ({ budget, addBudget }) => {
     const [budgetInner, setBudget] = useState('');
 
     const handleChange = (e) => {

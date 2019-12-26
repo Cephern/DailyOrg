@@ -1,8 +1,6 @@
-import React, { useState, useContext } from 'react';
-import { OrgContext } from '../contexts/OrgContext';
+import React, { useState } from 'react';
 
-const AddItem = () => {
-    const { addItem } = useContext(OrgContext);
+const AddItem = ({ addItem }) => {
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
 

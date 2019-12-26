@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
-import { OrgContext } from '../contexts/OrgContext';
+import React from 'react';
 
-const Display = () => {
-    const { items, deleteItem } = useContext(OrgContext);
-
+const Display = ({ items, deleteItem }) => {
     if (items.length === 0) {
         return (
             <div className="display_empty">
