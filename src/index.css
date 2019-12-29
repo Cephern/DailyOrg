@@ -123,6 +123,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px 0;
     margin: 1em;
+    position: relative;
 }
 
 .addItem_inputs input {

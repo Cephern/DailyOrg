@@ -1,14 +1,17 @@
 import React from 'react';
 import "./index.css";
-import OrgContextProvider from './contexts/OrgContext';
 import MainComponent from './comps/MainComponent';
+import OrgContextProvider from './contexts/OrgContext';
+import DatalistContextProvider from './contexts/DatalistContext';
 
 const App = () => {
   return (
     <div className="app">
-      <header className="app_header">Jag Org</header>
+      <header className="app_header">Jag Köper</header>
       <OrgContextProvider>
-        <MainComponent />
+        <DatalistContextProvider>
+          <MainComponent />
+        </DatalistContextProvider>
       </OrgContextProvider>
     </div>
   )
