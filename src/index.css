@@ -141,20 +141,21 @@ body {
     font-weight: 600;
 }
 
-.addItem_form #suggestions {
+.addItem_form .suggestions {
     position: absolute;
     top: 21.6px;
     right: 5%;
     width: 40%;
     background-color: #333;
     color: #f2f2f2;
+    overflow: hidden;
 }
 
-.addItem_form #suggestions li {
+.addItem_form .suggestions li {
     padding: 0.4em;
 }
 
-.addItem_form #suggestions li:hover {
+.addItem_form .suggestions li:hover {
     background-color: #f2f2f2;
     color: #111;
     cursor: pointer;
