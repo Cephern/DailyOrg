@@ -31,6 +31,32 @@ const OrgContextProvider = ({ children }) => {
         setItems(items.filter((item) => item.id !== id));
     }
 
+    const increment = (id) => {
+        setItems(items.map((item) => {
+            if (item.id === id) {
+                item = {
+                    ...item, count: item.count + 1
+                }
+            }
+            return item;
+        }));
+    }
+
+    const decrement = (id) => {
+        setItems(items.map((item) => {
+            if (item.id === id) {
+                item = {
+                    ...item, count: item.count - 1
+                }
+            }
+            return item;
+        }))
+    }
+
+    const resetItems = () => {
+        setItems([]);
+    }
+
     useEffect(() => {
         localStorage.setItem('org_items', JSON.stringify(items))
     }, [items]);
@@ -45,7 +71,7 @@ const OrgContextProvider = ({ children }) => {
 
 
     return (
-        <OrgContext.Provider value={{ items, budget, addItem, deleteItem, addBudget }}>
+        <OrgContext.Provider value={{ items, resetItems, increment, decrement, budget, addItem, deleteItem, addBudget }}>
             {children}
         </OrgContext.Provider>
     );

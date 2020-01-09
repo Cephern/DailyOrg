@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Display = ({ items, deleteItem }) => {
+const Display = ({ items, increment, decrement, deleteItem }) => {
+    const handleDecrement = (item) => {
+        if (item.count === 1) {
+            deleteItem(item.id);
+        } else {
+            decrement(item.id);
+        }
+    }
+
     if (items.length === 0) {
         return (
             <div className="display_empty">
@@ -16,8 +24,8 @@ const Display = ({ items, deleteItem }) => {
                     <p className="item_cost">{item.cost}р</p>
                     <p className="item_count">{item.count}</p>
                     <div className="item_btns">
-                        <button className="btn_inc">+</button>
-                        <button className="btn_dec">-</button>
+                        <button className="btn_dec" onClick={() => handleDecrement(item)} >-</button>
+                        <button className="btn_inc" onClick={() => increment(item.id)} >+</button>
                         <button className="btn_delete" onClick={() => deleteItem(item.id)} >Delete</button>
                     </div>
                 </div>

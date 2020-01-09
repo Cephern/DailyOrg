@@ -7,14 +7,14 @@ import TotalCount from './TotalCount';
 import AddItem from './AddItem';
 
 const MainComponent = () => {
-    const { items, budget, addItem, deleteItem, addBudget } = useContext(OrgContext);
+    const { items, increment, decrement, resetItems, budget, addItem, deleteItem, addBudget } = useContext(OrgContext);
 
     return (
         <div className="MainComponent">
             <Budget budget={budget} addBudget={addBudget} />
-            <TotalCount items={items} budget={budget} />
+            <TotalCount items={items} resetItems={resetItems} budget={budget} />
             <AddItem addItem={addItem} />
-            <Display items={items} deleteItem={deleteItem} />
+            <Display items={items} increment={increment} decrement={decrement} deleteItem={deleteItem} />
         </div>
     );
 }

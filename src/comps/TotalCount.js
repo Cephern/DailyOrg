@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TotalCount = ({ items, budget }) => {
+const TotalCount = ({ items, resetItems, budget }) => {
     if (items.length === 0) {
         return (
             <div className="total">
@@ -28,6 +28,7 @@ const TotalCount = ({ items, budget }) => {
 
     return (
         <div className="total" style={totalStyle}>
+            <button onClick={resetItems} className="resetBtn">Clear All</button>
             <p className="total_count">Items Count: {count}</p>
             <p className="total_cost">Total Cost: {cost}</p>
         </div>

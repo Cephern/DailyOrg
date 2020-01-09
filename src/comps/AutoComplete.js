@@ -17,6 +17,7 @@ const AutoComplete = ({ name, setName, height, setHeight }) => {
                 <li className="suggestion" onClick={() => {
                     setName(suggestion.name);
                     setCurrentSuggestion(suggestion.name);
+                    document.querySelector('#cost').focus();
                 }} key={suggestion.id} >{suggestion.name}</li>
             )
         });
